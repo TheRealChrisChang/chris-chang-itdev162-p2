@@ -1,2 +1,23 @@
-<h2>Todo App</h2>
+<div>
+    <img src="../assets/crumpledPaper.jpg" alt="" id="background-paper"/>
+    <h1 id="title">To Do App</h1>
 
+    <div id="input-area">
+        <input id="input-box" #newNote>
+        <button id="btn-add" (click)="addNotes(newNote.value)">Add Note</button>
+    </div>
+    
+    
+    <div id="list-display">
+        <h3 *ngFor="let note of notes">
+            <div>
+                <li class="oneTask">
+                    {{note.description}}
+                    <button class="btnDelete" (click)="deleteNotes(note.id)">Delete Note</button>
+                </li>
+            </div>    
+        </h3>
+    </div>
+    
+</div>
+    
