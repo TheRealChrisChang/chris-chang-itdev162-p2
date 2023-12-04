@@ -5,6 +5,7 @@ import { AppComponent } from './app.component';
 
 import { provideFirebaseApp, getApp, initializeApp } from '@angular/fire/app';
 import { getFirestore, provideFirestore } from '@angular/fire/firestore';
+import { SharedService } from './shared.service';
 
 const firebaseConfig = {
   apiKey: "AIzaSyDa0w0rWstfT7jcFHbSy2dLT5vQqDedPMA",
@@ -23,7 +24,7 @@ const firebaseConfig = {
     provideFirebaseApp(() => initializeApp( firebaseConfig)),
     provideFirestore(() => getFirestore()),
   ],
-  providers: [],
+  providers: [SharedService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
